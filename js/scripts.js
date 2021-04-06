@@ -1,10 +1,11 @@
 
 ('Use Strict')
 
-function Country(city, landmarks, timeOfYear) {
+function Country(city, landmarks, timeOfYear, image) {
   this.city = city;
   this.landmarks = landmarks;
   this.timeOfYear = timeOfYear;
+  this.image = image;
 }
 
 let Egypt = new Country("Cairo", "Pyramids", "Summer");
@@ -13,25 +14,22 @@ let UnitedStates = new Country("California", "Presido of San Francisco", "Winter
 
 $(document).ready(function(){
   $("#egyptContent").html(`${Egypt.city}, ${Egypt.landmarks}, ${Egypt.timeOfYear}`);
-  $("#egyptContent").hide();
+  $("#egyptSlide").hide();
   $("#egypt").click(function() {
-      $("#egyptContent").slideDown(600);
+      $("#egyptSlide").slideToggle(600);
   });
-
 
   $("#mexicoContent").html(`${Mexico.city}, ${Mexico.landmarks}, ${Mexico.timeOfYear}`);
   $("#mexicoContent").hide();
   $("#mexico").click(function() {
-      $("#mexicoContent").slideDown(600);
+      $("#mexicoContent").slideToggle(600);
   });
 
   $("#usaContent").html(`${UnitedStates.city}, ${UnitedStates.landmarks}, ${UnitedStates.timeOfYear}`);
   $("#usaContent").hide();
   $("#usa").click(function() {
-      $("#usaContent").slideDown(600);
+      $("#usaContent").slideToggle(600);
   });
-
-
 });
 
 
@@ -42,6 +40,6 @@ $(document).ready(function(){
 //   $("#egypt").click(function) {
 //   $("#egypt").slideDown(function() 
 //   $("#egypt").html(`${Egypt.city}, ${Egypt.landmarks}, ${Egypt.timeOfYear}`);
-  
+ 
 // });
 // });
